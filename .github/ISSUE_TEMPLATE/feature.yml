@@ -1,0 +1,71 @@
+name: Feature / task
+description: A self-contained unit of work with testable acceptance criteria.
+labels: ["type/feature"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        An issue is **Ready** when its acceptance criteria are testable, its blockers are closed, and its size is L or smaller. See CONTRIBUTING.md, section 3.
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Why this work is needed. Link the relevant spec section, ADR or milestone.
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: One or two sentences on the outcome.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What is included. Be specific about modules, functions and behaviour.
+    validations:
+      required: true
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of scope
+      description: What must not be changed as part of this issue.
+  - type: textarea
+    id: files
+    attributes:
+      label: Files and interfaces
+      description: Files to create or modify, and the interfaces consumed or produced (exact names and signatures).
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: A checklist. Every item must be provable by a test or a command.
+      value: |
+        - [ ] 
+    validations:
+      required: true
+  - type: textarea
+    id: verify
+    attributes:
+      label: How to verify
+      description: The exact commands a reviewer runs.
+      render: bash
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: "One line per blocker: Blocked by #<issue>."
+  - type: dropdown
+    id: size
+    attributes:
+      label: Size
+      options:
+        - S (up to about half a day)
+        - M (one to three days)
+        - L (about a week; split if larger)
+    validations:
+      required: true

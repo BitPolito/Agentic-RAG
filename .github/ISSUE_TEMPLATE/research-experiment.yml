@@ -1,0 +1,37 @@
+name: Research experiment
+description: A measurable experiment for the benchmark or the engine tuning.
+labels: ["type/research"]
+body:
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: Hypothesis
+      description: What you expect to observe, and why.
+    validations:
+      required: true
+  - type: textarea
+    id: setup
+    attributes:
+      label: Setup and configuration
+      description: Dataset, models, adapters, parameters, and the path of the experiment config under research/experiments/.
+    validations:
+      required: true
+  - type: textarea
+    id: metrics
+    attributes:
+      label: Metrics
+      description: Metrics to report, for example Recall@K, Precision@K, MRR, nDCG, TCR, latency p50 and p95, and peak VRAM.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Expected outcome and decision
+      description: Which result would confirm or reject the hypothesis, and what decision depends on it.
+    validations:
+      required: true
+  - type: textarea
+    id: budget
+    attributes:
+      label: Compute budget
+      description: Expected GPU hours and hardware, for example the RTX 5080 16 GB workstation.
