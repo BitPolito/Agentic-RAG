@@ -17,3 +17,51 @@ members = ["packages/*"]
 [tool.uv.sources]
 agentic-rag = { workspace = true }
 agentic-rag-code = { workspace = true }
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF", "D"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"**/tests/**" = ["D"]
+
+[tool.mypy]
+strict = true
+files = ["packages"]
+python_version = "3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["packages"]
+addopts = "--cov=agentic_rag --cov=agentic_rag_code --cov-report=term-missing --cov-fail-under=80"
+
+[tool.importlinter]
+root_packages = ["agentic_rag", "agentic_rag_code"]
+
+[[tool.importlinter.contracts]]
+name = "Types and ports never import adapters"
+type = "forbidden"
+source_modules = ["agentic_rag.types", "agentic_rag.ports"]
+forbidden_modules = ["agentic_rag.adapters"]
+
+[[tool.importlinter.contracts]]
+name = "The engine never imports the code-rag extension"
+type = "forbidden"
+source_modules = ["agentic_rag"]
+forbidden_modules = ["agentic_rag_code"]
+
+[[tool.importlinter.contracts]]
+name = "Engine layers"
+type = "layers"
+layers = [
+    "agentic_rag.adapters",
+    "agentic_rag.ingest : agentic_rag.retrieval : agentic_rag.generation : agentic_rag.agent : agentic_rag.eval",
+    "agentic_rag.evidence",
+    "agentic_rag.ports",
+    "agentic_rag.types",
+]
