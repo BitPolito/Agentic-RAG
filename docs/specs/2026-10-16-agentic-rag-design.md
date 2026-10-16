@@ -246,8 +246,8 @@ Milestones carry no dates. Each one closes when its exit criteria are met.
 |---|---|---|
 | M0 | Foundation | Workspace scaffold; CI with lint, typecheck, test and quality-gate green on `main`; protected `main`; AGENTS.md, CONTRIBUTING, templates, labels and board in place; ADR-0001–0004 accepted |
 | M1 | Core contracts | `types`, `ports`, `EngineConfig` and in-memory fakes; an end-to-end toy pipeline passes on fakes; EvidencePack contract test |
-| M2 | Evaluation harness | IR metrics and runner; golden-set format; Academy golden set ported; reproducible baseline report |
-| E1 | Ingestion extraction | Parsers, cleaning, chunking, sections and `IngestPipeline`; chunk-count parity with Academy on the open corpus within a stated tolerance; ported tests green |
+| M2 | Evaluation harness | IR metrics and runner; golden-set format; reproducible baseline report on the toy set |
+| E1 | Ingestion extraction | Parsers, cleaning, chunking, sections and `IngestPipeline`; chunk-count parity with Academy on the open corpus within a stated tolerance; ported tests green; Academy technical golden set re-annotated with section ids |
 | E2 | Retrieval extraction | Hybrid retrieval, rerank, MMR, parent expansion, EvidencePackBuilder, strict mode; known Academy defects fixed; metrics ≥ Academy baseline |
 | E3 | Adapters | `qvac` adapter plus the completed worker; `local` GPU adapter; vector store chosen by ADR; JSON BM25; SQL ParentStore; Redis cache; eval passes on both the QVAC and local stacks |
 | E4 | Agent runtime | Versioned prompt registry; declarative task graph; LLM concurrency control; Academy's 8 study actions expressible as configuration |
@@ -307,7 +307,7 @@ Milestones carry no dates. Each one closes when its exit criteria are met.
 - `priority/*`: p0, p1, p2.
 - `size/*`: S, M, L.
 - `status/*`: blocked, needs-design.
-- Also `good first issue` and `agent-ready`.
+- Also `epic`, `good first issue` and `agent-ready`.
 
 ### Board
 
