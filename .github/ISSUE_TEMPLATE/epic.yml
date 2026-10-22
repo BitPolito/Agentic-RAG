@@ -1,0 +1,27 @@
+name: Epic
+description: Tracks a milestone whose sub-issues are detailed when its predecessor closes.
+labels: ["epic"]
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: The outcome of the milestone. Link the spec section.
+    validations:
+      required: true
+  - type: textarea
+    id: exit-criteria
+    attributes:
+      label: Exit criteria
+      description: Copied from the spec's milestone table.
+    validations:
+      required: true
+  - type: textarea
+    id: sub-issues
+    attributes:
+      label: Sub-issues
+      description: A checklist of planned sub-issues. The first item is always "Detail the sub-issues of this epic".
+      value: |
+        - [ ] Detail the sub-issues of this epic
+    validations:
+      required: true

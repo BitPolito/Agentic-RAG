@@ -1,0 +1,33 @@
+name: Bug report
+description: Something behaves differently from the spec, the docs or the tests.
+labels: ["type/bug"]
+body:
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behaviour
+      description: What happened. Include error messages and logs.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+      description: What should have happened, and where that expectation comes from (spec, docs, test).
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: The smallest set of commands or code that reproduces the problem.
+      render: bash
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python version, git SHA, adapters and models in use, and the GPU if relevant.
+    validations:
+      required: true
