@@ -1,0 +1,5 @@
+# Default owners: the BitPolito AI/ML team.
+*               @BitPolito/ai-ml
+
+# Architecture decisions are approved by the lead maintainer.
+/docs/adr/      @lucaosti

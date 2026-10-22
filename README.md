@@ -12,9 +12,23 @@ Agentic-RAG is a local-first Retrieval-Augmented Generation engine built by the 
 
 Everything runs locally. The project does not use frontier or hosted commercial models.
 
-## Status
+## Quick start
 
-The project is being set up. The design is described in `docs/specs/`, and architecture decisions are recorded in `docs/adr/`.
+```bash
+git clone https://github.com/BitPolito/Agentic-RAG.git
+cd Agentic-RAG
+uv sync
+uv run pytest
+```
+
+## Documentation
+
+- [Contributing guide](CONTRIBUTING.md): workflow, conventions and how to pick up work.
+- [Architecture overview](docs/architecture.md): packages, layers and data flow.
+- [Design specification](docs/specs/2026-10-16-agentic-rag-design.md): goals, architecture, milestones and conventions.
+- [Architecture Decision Records](docs/adr/README.md).
+- [Project board](https://github.com/orgs/BitPolito/projects/23).
+- Instructions for automated contributors: [AGENTS.md](AGENTS.md).
 
 ## License
 
