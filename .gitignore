@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.import_linter_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Data, models and raw results
+data/
+research/**/results/raw/
+models/
+*.gguf
+*.safetensors
+
+# IDE and OS
+.idea/
+.vscode/
+.DS_Store

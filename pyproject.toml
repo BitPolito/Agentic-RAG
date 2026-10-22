@@ -1,0 +1,19 @@
+[project]
+name = "agentic-rag-workspace"
+version = "0.0.0"
+description = "Workspace root for the Agentic-RAG engine, Code-RAG extension and research tooling."
+requires-python = ">=3.11"
+dependencies = ["agentic-rag", "agentic-rag-code"]
+
+[dependency-groups]
+dev = ["ruff", "mypy", "pytest", "pytest-cov", "import-linter"]
+
+[tool.uv]
+package = false
+
+[tool.uv.workspace]
+members = ["packages/*"]
+
+[tool.uv.sources]
+agentic-rag = { workspace = true }
+agentic-rag-code = { workspace = true }
